@@ -1,0 +1,30 @@
+@startuml
+
+skinparam padding 10
+
+actor "Client" as client
+actor "Empleat" as empleat
+rectangle Caixer {
+  usecase "Canviar Pin" as canviarPin
+  usecase "Consulta Saldo" as consultarSaldo
+  usecase "Consultar Ultims Moviments" as ultimsMoviment
+  usecase "Reposar Diners" as reposarDiners
+
+  usecase "Autenticacio Usuari" as authUser
+  
+
+}
+
+
+client --> canviarPin
+client --> consultarSaldo
+client --> ultimsMoviment   
+
+client .> authUser : <<include>>
+empleat .> authUser : <<include>>
+
+
+empleat --> reposarDiners
+
+
+@enduml
