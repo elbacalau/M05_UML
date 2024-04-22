@@ -12,15 +12,18 @@ rectangle Taxis {
     usecase "Consultar Reserves" as consultarReserves
 
     donaAlta ..> altaReserves : include
-    donaAlta ..> DadesObligatories : extend
+    donaAlta ..> DadesObligatories : include
 
     rectangle DadesObligatories {
         usecase "Dades Obligatories" as dob
     }
 }
 
+
 Administratius --> donaAlta
 Administratius --> cancelaConfirmar
+Administratius --> altaReserves : Si no existeix\ndonarlo dalta directament
+
 Gerent --> donaAlta
 Xofer --> consultarReserves
 
