@@ -1,3 +1,36 @@
 @startuml
+[*] --> HoraMinuts
+
+state HoraMinuts {
+  [*] --> HoraPampallugues
+  HoraPampallugues --> MinutsPampallugues: presionarA
+  HoraPampallugues --> HoraMostrada: presionarA
+  MinutsPampallugues --> MinutsCanviats: presionarB
+  MinutsPampallugues --> HoraPampallugues: presionarA
+  HoraMostrada --> HoraCanviada: presionarA
+  HoraMostrada --> HoraPampallugues: presionarB
+}
+
+state HoraPampallugues {
+  HoraPampallugues: Hora pampalluguejant
+}
+
+state MinutsPampallugues {
+  MinutsPampallugues: Minuts pampalluguejant
+}
+
+state HoraMostrada {
+  HoraMostrada: Hora mostrada sense pampallugues
+}
+
+state HoraCanviada {
+  HoraCanviada: Hora canviada
+}
+
+state MinutsCanviats {
+  MinutsCanviats: Minuts canviats
+}
+
+[*] --> HoraMinuts
 
 @enduml
