@@ -12,7 +12,7 @@ rectangle Taxis {
     usecase "Consultar Reserves" as consultarReserves
 
     donaAlta ..> altaReserves : include
-    donaAlta ..> DadesObligatories : include
+    donaAlta ..> DadesObligatories : extend
 
     rectangle DadesObligatories {
         usecase "Dades Obligatories" as dob
